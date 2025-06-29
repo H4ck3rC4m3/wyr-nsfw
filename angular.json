@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/wyr-nsfw/",
             "outputPath": "dist/wyr-nsfw",
             "index": "src/index.html",
             "browser": "src/main.ts",

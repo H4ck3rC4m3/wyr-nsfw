@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="language-selector">
+    <span class="fi fi-{{ idiomes[idiomaActual] }}"></span>
+    <select [(ngModel)]="idiomaActual" (change)="canviaIdioma($event)">
+      <option value="ca">Català</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
+  <h1>{{ 'TITLE' | translate }}</h1>
+
+  <div class="formulari">
+    <input
+      type="text"
+      [(ngModel)]="nomPersona"
+      placeholder="{{ 'PLACEHOLDER' | translate }}"
+    />
+    <button (click)="afegirPersona()" class="add-btn">{{ 'ADD' | translate }}</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let persona of persones; let i = index">
+      <span class="persona-text">{{ persona }}</span>
+      <button (click)="eliminaPersona(i)" class="delete-btn" title="{{ 'DELETE' | translate }}">
+        🗑️
+      </button>
+    </li>
+  </ul>
+
+  <button class="play-button" (click)="jugar()" [disabled]="!minim">{{ 'PLAY' | translate }}</button>
+</div>

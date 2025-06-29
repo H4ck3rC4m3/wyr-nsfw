@@ -1,0 +1,20 @@
+<div class="ruleta-wrapper">
+  <div class="ruleta-container">
+    <div class="ruleta" [style.transform]="'rotate(' + angle + 'deg)'">
+      <svg viewBox="0 0 200 200" class="ruleta-svg">
+        <g *ngFor="let color of colors; let i = index"
+           [attr.transform]="'rotate(' + i * 60 + ' 100 100)'">
+          <path
+            d="M100,100 L100,0 A100,100 0 0,1 186.6,50 z"
+            [attr.fill]="color"
+            stroke="black"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </div>
+    <button class="girar-btn" (click)="girar()" [disabled]="spinning">
+      <div class="play-icon"></div>
+    </button>
+  </div>
+</div>

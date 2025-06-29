@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "flag-icons/css/flag-icons.min.css";
+
+body {
+  margin: 0;
+  font-family: "Tilt Neon";
+  background-color: black;
+  color: white;
+}

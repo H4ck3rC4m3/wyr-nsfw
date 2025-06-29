@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="top-panel">
+    <div class="ruletes-wrapper">
+      <button class="girar-totes-btn" (click)="girarTotes('top')">{{ 'SPIN_ALL' | translate }}</button>
+      <div class="ruletes">
+        <div *ngFor="let ruleta of ruletes; let i = index" class="categoria">
+          <div class="nom-label">{{ categories[i] | translate }}</div>
+          <app-ruleta [opcions]="llistes[i]" (resultatFinal)="actualitzarResultat(i, 'top', $event)" class="ruleta" #ruletaSuperior></app-ruleta>
+        </div>
+      </div>
+      <h1 class="resultat">{{ 'FUCK_WITH' | translate }} {{ personaA }} {{ duracioA }} {{ posturaA }} {{ llocA }} {{ condicioA }}</h1>
+    </div>
+  </div>
+
+  <div class="separator-line"></div>
+
+  <div class="bottom-panel">
+    <div class="ruletes-wrapper">
+      <button class="girar-totes-btn" (click)="girarTotes('bottom')">{{ 'SPIN_ALL' | translate }}</button>
+      <div class="ruletes">
+        <div *ngFor="let ruleta of ruletes; let i = index" class="categoria">
+          <div class="nom-label">{{ categories[i] | translate }}</div>
+          <app-ruleta [opcions]="llistes[i]" (resultatFinal)="actualitzarResultat(i, 'bottom', $event)" class="ruleta" #ruletaInferior></app-ruleta>
+        </div>
+      </div>
+      <h1 class="resultat">{{ 'FUCK_WITH' | translate }} {{ personaB }} {{ duracioB }} {{ posturaB }} {{ llocB }} {{ condicioB }}</h1>
+    </div>
+  </div>
+
+  <a href="/" class="floating-home-btn" aria-label="Inici">🏠</a>
+</div>
